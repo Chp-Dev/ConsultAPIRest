@@ -18,7 +18,9 @@ public class Client {
     private String name;
     private String lastname;
     private LocalDate dateBirth;
-    private int age;
+
+    @Transient
+    private Long age;
 
 
 

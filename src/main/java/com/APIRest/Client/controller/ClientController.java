@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping(path = "api/client")
+@RequestMapping(path = "/api/client")
 @RestController
 public class ClientController {
 
@@ -22,9 +22,10 @@ public class ClientController {
         return new ResponseEntity<>(this.clientService.create(client), HttpStatus.OK );
     }
 
-    @GetMapping("/")
-    public ResponseEntity<List<Client>> findAll(){
-        return new ResponseEntity<>(this.clientService.findAll(), HttpStatus.OK);
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Client> onclient(@PathVariable Long id){
+        return new ResponseEntity<>(this.clientService.onclient(id), HttpStatus.OK);
     }
 
 
